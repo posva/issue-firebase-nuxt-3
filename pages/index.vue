@@ -6,8 +6,8 @@ const db = getFirestore(getApp())
 const configRef = doc(db, 'configs', 'jORwjIykFo2NmkdzTkhU')
 
 onServerPrefetch(async () => {
-  const data = await getDoc(configRef)
-  console.log('got data once', data)
+  const snapshot = await getDoc(configRef)
+  console.log('got data once', snapshot.data()?.amount)
 })
 </script>
 
